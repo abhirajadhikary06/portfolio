@@ -6,7 +6,7 @@
   <title>Abhiraj Adhikary</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='black'/%3E%3Cpath d='M16 6v20M6 16h20' stroke='%2300cc00' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='black'/%3E%3Cpath d='M16 6v20M6 16h20' stroke='url(%23gradient)' stroke-width='3' stroke-linecap='round'/%3E%3Cdefs%3E%3ClinearGradient id='gradient' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' style='stop-color:%23f7ff00'/%3E%3Cstop offset='100%' style='stop-color:%2366ff00'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     (function() {
@@ -21,7 +21,7 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: #000000;
       color: #e0e0e0;
     }
@@ -55,13 +55,17 @@
     }
 
     nav a:hover {
-      color: #00cc00;
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       transform: translateY(-2px);
     }
 
     nav a i {
       margin-right: 6px;
-      color: #00cc00;
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero-section {
@@ -74,7 +78,9 @@
     .hero-section h1 {
       font-size: 52px;
       font-weight: 700;
-      color: #00cc00;
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 15px;
       animation: fadeIn 1s ease-out;
     }
@@ -103,7 +109,7 @@
 
     .action-buttons a {
       padding: 12px 30px;
-      background: #00cc00;
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
       color: #fff;
       border-radius: 30px;
       text-decoration: none;
@@ -116,9 +122,9 @@
     }
 
     .action-buttons a:hover {
-      background: #009900;
+      background: linear-gradient(45deg, #e6ee00, #55ee00);
       transform: scale(1.05);
-      box-shadow: 0 0 12px rgba(0, 204, 0, 0.5);
+      box-shadow: 0 0 12px rgba(102, 255, 0, 0.5);
     }
 
     .action-buttons a i {
@@ -132,7 +138,7 @@
 
     .strip-container {
       overflow: hidden;
-      background: #00cc00;
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
       color: #fff;
       padding: 12px 0;
       font-weight: 600;
@@ -149,10 +155,14 @@
     .strip {
       display: inline-block;
       animation: marquee-right 15s linear infinite;
+      animation-delay: 0s;
+      transform: translateX(0);
     }
 
     .strip-container:nth-of-type(2) .strip {
       animation: marquee-left 15s linear infinite;
+      animation-delay: 0s;
+      transform: translateX(0);
     }
 
     .strip span {
@@ -186,12 +196,20 @@
     section h2 {
       font-size: 38px;
       font-weight: 700;
-      color: #00cc00;
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
+    }
+
+    section h2 i {
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .about-me p {
@@ -218,16 +236,24 @@
 
     .tech-stack div:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 12px rgba(0, 204, 0, 0.3);
+      box-shadow: 0 0 12px rgba(102, 255, 0, 0.3);
     }
 
     .tech-stack h3 {
       font-size: 20px;
-      color: #00cc00;
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 15px;
       display: flex;
       align-items: center;
       gap: 8px;
+    }
+
+    .tech-stack h3 i {
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .tech-stack ul {
@@ -244,7 +270,9 @@
     }
 
     .tech-stack li i {
-      color: #00cc00;
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .projects-container {
@@ -263,16 +291,30 @@
 
     .project-box:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 12px rgba(0, 204, 0, 0.3);
+      box-shadow: 0 0 12px rgba(102, 255, 0, 0.3);
     }
 
     .project-box h3 {
       font-size: 20px;
-      color: #00cc00;
       margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 8px;
+    }
+
+    .project-box h3 a {
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+      font-size: 20px;
+      margin-left: 8px;
+    }
+
+    .project-box h3 i {
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .project-box p {
@@ -306,7 +348,9 @@
     }
 
     .certifications li i {
-      color: #00cc00;
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .certifications li a {
@@ -315,42 +359,47 @@
     }
 
     .certifications li a:hover {
-      color: #00cc00;
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .connect-section .links {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       gap: 15px;
       margin-top: 25px;
     }
 
+    .connect-section .links-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
     .connect-section a {
-      color: #00cc00;
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       text-decoration: none;
       font-size: 15px;
       padding: 10px 22px;
-      border: 1px solid #00cc00;
-      border-radius: 30px;
-      transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      border: none;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .connect-section a:hover {
-      background: #00cc00;
-      color: #000000;
-      transform: scale(1.05);
-    }
-
     .connect-section a i {
-      color: #00cc00;
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .connect-section a:hover i {
-      color: #000000;
+    .contact-section {
+      min-height: 300px;
     }
 
     .contact-section form {
@@ -375,7 +424,8 @@
 
     .contact-section input:focus,
     .contact-section textarea:focus {
-      border-color: #00cc00;
+      border-image: linear-gradient(45deg, #f7ff00, #66ff00);
+      border-image-slice: 1;
       outline: none;
     }
 
@@ -386,7 +436,7 @@
 
     .contact-section button {
       padding: 12px 30px;
-      background: #00cc00;
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
       color: #fff;
       border: none;
       border-radius: 30px;
@@ -398,9 +448,9 @@
     }
 
     .contact-section button:hover {
-      background: #009900;
+      background: linear-gradient(45deg, #e6ee00, #55ee00);
       transform: scale(1.05);
-      box-shadow: 0 0 12px rgba(0, 204, 0, 0.5);
+      box-shadow: 0 0 12px rgba(102, 255, 0, 0.5);
     }
 
     #form-status {
@@ -408,6 +458,12 @@
       font-size: 14px;
       color: #a0a0a0;
       text-align: center;
+    }
+
+    #form-status.success {
+      background: linear-gradient(45deg, #f7ff00, #66ff00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     @media (max-width: 768px) {
@@ -468,12 +524,12 @@
 <body>
   <header>
     <nav>
-      <a href="#about"><i class="fas fa-user"></i> About</a>
-      <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
-      <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
-      <a href="#certifications"><i class="fas fa-certificate"></i> Internships</a>
-      <a href="#connect"><i class="fas fa-link"></i> Connect</a>
-      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      <a href="#about" title="About Me"><i class="fas fa-user"></i> About</a>
+      <a href="#skills" title="My Skills"><i class="fas fa-tools"></i> Skills</a>
+      <a href="#projects" title="My Projects"><i class="fas fa-project-diagram"></i> Projects</a>
+      <a href="#certifications" title="My Internships and Certifications"><i class="fas fa-certificate"></i> Internships</a>
+      <a href="#connect" title="Connect With Me"><i class="fas fa-link"></i> Connect</a>
+      <a href="#contact" title="Contact Me"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
   </header>
 
@@ -485,9 +541,9 @@
       2x Hackathon Winner | Focused on modern data pipelines and cloud architecture.
     </p>
     <div class="action-buttons">
-      <a href="https://shorturl.at/smxF6" style="color: #000000;"><i class="fas fa-file-alt" style="color: #000000;"></i> Resume</a>
-      <a href="https://github.com/abhirajadhikary06" target="_blank" style="color: #000000;"><i class="fab fa-github" style="color: #000000;"></i> GitHub</a>
-      <a href="https://linkedin.com/in/abhirajadhikary06" target="_blank" style="color: #000000;"><i class="fab fa-linkedin" style="color: #000000;"></i> LinkedIn</a>
+      <a href="https://shorturl.at/smxF6" style="color: #000000;" title="View Resume"><i class="fas fa-file-alt" style="color: #000000;"></i> Resume</a>
+      <a href="https://github.com/abhirajadhikary06" target="_blank" style="color: #000000;" title="Visit GitHub"><i class="fab fa-github" style="color: #000000;"></i> GitHub</a>
+      <a href="https://linkedin.com/in/abhirajadhikary06" target="_blank" style="color: #000000;" title="Visit LinkedIn"><i class="fab fa-linkedin" style="color: #000000;"></i> LinkedIn</a>
     </div>
   </section>
 
@@ -522,18 +578,18 @@
         <li><i class="fas fa-flask"></i> Flask</li>
         <li><i class="fas fa-bolt"></i> FastAPI</li>
         <li><i class="fas fa-database"></i> SQLite</li>
-        <li><i class="fa-solid fa-republican"></i> PostgreSQL</li>
+        <li><i class="fas fa-database"></i> PostgreSQL</li>
       </ul>
     </div>
     <div>
       <h3><i class="fas fa-table"></i> Data</h3>
       <ul>
-        <li><i class="fa-solid fa-paw"></i> Pandas</li>
+        <li><i class="fas fa-table"></i> Pandas</li>
         <li><i class="fas fa-square-root-alt"></i> NumPy</li>
         <li><i class="fas fa-chart-bar"></i> Power BI</li>
         <li><i class="fas fa-database"></i> SQL</li>
         <li><i class="fas fa-fire"></i> PySpark</li>
-        <li><i class="fa-solid fa-gem"></i> Databricks</li>
+        <li><i class="fas fa-gem"></i> Databricks</li>
         <li><i class="fas fa-snowflake"></i> Snowflake</li>
       </ul>
     </div>
@@ -552,7 +608,7 @@
         <li><i class="fas fa-code-branch"></i> Git</li>
         <li><i class="fab fa-github"></i> GitHub</li>
         <li><i class="fas fa-code"></i> VSCode</li>
-        <li><i class="fas fa-envelope"></i> Postman</li>
+        <li><i class="fas fa-paper-plane"></i> Postman</li>
       </ul>
     </div>
     <div>
@@ -586,16 +642,16 @@
       <div class="project-box">
         <h3>
           <i class="fas fa-gamepad"></i>
-          <a href="https://quizly-production-bf70.up.railway.app" target="_blank" style="margin-left:8px; color:#00cc00; font-size:20px; text-decoration:none;" title="View on GitHub">
+          <a href="https://quizly-production-bf70.up.railway.app" target="_blank" title="View Quizly">
             Quizly
           </a>
         </h3>
-        <p>AI powered Quiz platform with real-time scoring and user analytics.</p>
+        <p>AI-powered quiz platform with real-time scoring and user analytics.</p>
       </div>
       <div class="project-box">
         <h3>
           <i class="fas fa-file-invoice"></i>
-          <a href="https://billvault.pythonanywhere.com" target="_blank" style="margin-left:8px; color:#00cc00; font-size:20px; text-decoration:none;" title="View on GitHub">
+          <a href="https://billvault.pythonanywhere.com" target="_blank" title="View Bill Vault">
             Bill Vault
           </a>
         </h3>
@@ -604,7 +660,7 @@
       <div class="project-box">
         <h3>
           <i class="fab fa-github"></i>
-          <a href="https://gitcollab-pmco.onrender.com" target="_blank" style="margin-left:8px; color:#00cc00; font-size:20px; text-decoration:none;" title="View on GitHub">
+          <a href="https://gitcollab-pmco.onrender.com" target="_blank" title="View GitCollab">
             GitCollab
           </a>
         </h3>
@@ -613,7 +669,7 @@
       <div class="project-box">
         <h3>
           <i class="fas fa-sticky-note"></i>
-          <a href="https://devbiodotcom.onrender.com" target="_blank" style="margin-left:8px; color:#00cc00; font-size:20px; text-decoration:none;" title="View on GitHub">
+          <a href="https://devbiodotcom.onrender.com" target="_blank" title="View devbiodotcom">
             devbiodotcom
           </a>
         </h3>
@@ -622,20 +678,20 @@
       <div class="project-box">
         <h3>
           <i class="fa-solid fa-retweet"></i>
-          <a href="https://tierlesstweet.onrender.com" target="_blank" style="margin-left:8px; color:#00cc00; font-size:20px; text-decoration:none;" title="View on GitHub">
+          <a href="https://tierlesstweet.onrender.com" target="_blank" title="View tierlesstweet">
             tierlesstweet
           </a>
         </h3>
-        <p>AI-powered tweet generation that creates professional and engaging posts for your social media platforms.</p>
+        <p>Power your social media with AI-driven content creation.</p>
       </div>
       <div class="project-box">
         <h3>
           <i class="fa-solid fa-wave-square"></i>
-          <a href="https://netpulse.onrender.com" target="_blank" style="margin-left:8px; color:#00cc00; font-size:20px; text-decoration:none;" title="View on GitHub">
+          <a href="https://netpulse.onrender.com" target="_blank" title="View netpulse">
             netpulse
           </a>
         </h3>
-        <p>A real-time website status monitoring that simplifies troubleshooting of your web applications.</p>
+        <p>Stay connected with real-time website monitoring.</p>
       </div>
     </div>
   </section>
@@ -647,11 +703,11 @@
       <li><i class="fas fa-certificate"></i> Hacktober'24</li>
       <li>
         <i class="fas fa-certificate"></i>
-        <a href="https://shorturl.at/Nfmow" target="_blank" style="color: #a0a0a0; text-decoration: none;">PwC PowerBI Job Simulation – Forage</a>
+        <a href="https://shorturl.at/Nfmow" target="_blank" style="color: #a0a0a0; text-decoration: none;" title="View PwC Certificate">PwC PowerBI Job Simulation – Forage</a>
       </li>
       <li>
         <i class="fas fa-certificate"></i>
-        <a href="https://shorturl.at/LwG2H" target="_blank" style="color: #a0a0a0; text-decoration: none;">Accenture Job Simulation – Forage</a>
+        <a href="https://shorturl.at/LwG2H" target="_blank" style="color: #a0a0a0; text-decoration: none;" title="View Accenture Certificate">Accenture Job Simulation – Forage</a>
       </li>
     </ul>
   </section>
@@ -659,13 +715,17 @@
   <section class="connect-section" id="connect">
     <h2><i class="fas fa-link"></i> Connect With Me</h2>
     <div class="links">
-      <a href="https://linkedin.com/in/abhirajadhikary06" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/abhirajadhikary06" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://hackerrank.com/profile/abhirajadhikary1" target="_blank"><i class="fab fa-hackerrank"></i> HackerRank</a>
-      <a href="https://leetcode.com/u/abhirajadhikary06" target="_blank"><i class="fas fa-code"></i> LeetCode</a>
-      <a href="https://x.com/backbabhiraj" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
-      <a href="https://naukri.com/code360/profile/abhirajadhikary" target="_blank"><i class="fas fa-code"></i> Naukri/Code360</a>
-      <a href="https://dev.to/abhirajadhikary06" target="_blank"><i class="fab fa-dev"></i> Dev.to</a>
+      <div class="links-row">
+        <a href="https://linkedin.com/in/abhirajadhikary06" target="_blank" title="Visit my LinkedIn profile"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/abhirajadhikary06" target="_blank" title="Visit my GitHub profile"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://hackerrank.com/profile/abhirajadhikary1" target="_blank" title="Visit my HackerRank profile"><i class="fab fa-hackerrank"></i> HackerRank</a>
+        <a href="https://leetcode.com/u/abhirajadhikary06" target="_blank" title="Visit my LeetCode profile"><i class="fas fa-code"></i> LeetCode</a>
+        <a href="https://x.com/backbabhiraj" target="_blank" title="Visit my X profile"><i class="fab fa-twitter"></i> X (Twitter)</a>
+      </div>
+      <div class="links-row">
+        <a href="https://naukri.com/code360/profile/abhirajadhikary" target="_blank" title="Visit my Naukri/Code360 profile"><i class="fas fa-code"></i> Naukri/Code360</a>
+        <a href="https://dev.to/abhirajadhikary06" target="_blank" title="Visit my Dev.to profile"><i class="fab fa-dev"></i> Dev.to</a>
+      </div>
     </div>
   </section>
 
@@ -675,14 +735,14 @@
       <input type="text" name="user_name" placeholder="Your Name" required />
       <input type="email" name="user_email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
+      <button type="submit" style="color: #000000;">Send</button>
       <div id="form-status"></div>
     </form>
   </section>
 
   <script>
     document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+      anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
@@ -704,12 +764,19 @@
       emailjs.sendForm('service_w5ijbls', 'template_eaac86y', this)
         .then(() => {
           status.textContent = 'Message sent successfully!';
-          status.style.color = '#00cc00';
+          status.classList.add('success');
           this.reset();
+          setTimeout(() => {
+            status.textContent = '';
+            status.classList.remove('success');
+          }, 4000);
         }, (error) => {
-          status.textContent = 'Failed to send message. Please try again.';
+          status.textContent = 'Failed to send message.';
           status.style.color = '#ff0000';
           console.error('EmailJS error:', error);
+          setTimeout(() => {
+            status.textContent = '';
+          }, 4000);
         });
     });
   </script>
