@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhiraj Adhikary</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='black'/%3E%3Cpath d='M16 6v20M6 16h20' stroke='%2300cc00' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #000000;
+            color: #e0e0e0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: #000000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #00cc00;
+            transform: translateY(-2px);
+        }
+
+        nav a i {
+            margin-right: 6px;
+            color: #00cc00;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 100px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-section h1 {
+            font-size: 52px;
+            font-weight: 700;
+            color: #00cc00;
+            margin-bottom: 15px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-section .tagline {
+            font-size: 22px;
+            color: #b0b0b0;
+            margin-bottom: 20px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .hero-section .intro {
+            font-size: 16px;
+            color: #a0a0a0;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            animation: fadeIn 1.4s ease-out;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            animation: fadeIn 1.6s ease-out;
+        }
+
+        .action-buttons a {
+            padding: 12px 30px;
+            background: #00cc00;
+            color: #fff;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-buttons a:hover {
+            background: #009900;
+            transform: scale(1.05);
+            box-shadow: 0 0 12px rgba(0, 204, 0, 0.5);
+        }
+
+        .action-buttons a i {
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .strip-container {
+            overflow: hidden;
+            background: #00cc00;
+            color: #fff;
+            padding: 12px 0;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+            transform: rotate(-2deg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .strip {
+            display: inline-block;
+            animation: marquee 15s linear infinite;
+        }
+
+        .strip span {
+            margin: 0 20px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .strip span::before {
+            content: '✳';
+            margin-right: 8px;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        section {
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 38px;
+            font-weight: 700;
+            color: #00cc00;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .about-me p {
+            font-size: 16px;
+            color: #a0a0a0;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .tech-stack div {
+            padding: 25px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            background: #000000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tech-stack div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 12px rgba(0, 204, 0, 0.3);
+        }
+
+        .tech-stack h3 {
+            font-size: 20px;
+            color: #00cc00;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tech-stack ul {
+            list-style: none;
+        }
+
+        .tech-stack li {
+            font-size: 14px;
+            color: #a0a0a0;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tech-stack li i {
+            color: #00cc00;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .project-box {
+            padding: 25px;
+            border: 1px solid #333;
+            border-radius: 10px;
+            background: #000000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 12px rgba(0, 204, 0, 0.3);
+        }
+
+        .project-box h3 {
+            font-size: 20px;
+            color: #00cc00;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-box p {
+            font-size: 14px;
+            color: #a0a0a0;
+            line-height: 1.6;
+        }
+
+        .certifications ul {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .certifications li {
+            font-size: 16px;
+            color: #a0a0a0;
+            margin-bottom: 12px;
+            padding: 12px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background: #000000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .certifications li:hover {
+            transform: translateY(-3px);
+        }
+
+        .certifications li i {
+            color: #00cc00;
+        }
+
+        .connect-section .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .connect-section a {
+            color: #00cc00;
+            text-decoration: none;
+            font-size: 15px;
+            padding: 10px 22px;
+            border: 1px solid #00cc00;
+            border-radius: 30px;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .connect-section a:hover {
+            background: #00cc00;
+            color: #000000;
+            transform: scale(1.05);
+        }
+
+        .connect-section a i {
+            color: #00cc00;
+        }
+
+        .connect-section a:hover i {
+            color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 14px;
+            }
+
+            .hero-section {
+                padding: 60px 15px;
+            }
+
+            .hero-section h1 {
+                font-size: 38px;
+            }
+
+            .hero-section .tagline {
+                font-size: 18px;
+            }
+
+            .hero-section .intro {
+                font-size: 14px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            section {
+                padding: 40px 15px;
+            }
+
+            section h2 {
+                font-size: 30px;
+            }
+
+            .tech-stack div {
+                padding: 20px;
+            }
+
+            .project-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#about"><i class="fas fa-user"></i> About</a>
+      <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
+      <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+      <a href="#certifications"><i class="fas fa-certificate"></i> Internships</a>
+      <a href="#connect"><i class="fas fa-link"></i> Connect</a>
+    </nav>
+  </header>
+
+  <section class="hero-section">
+    <h1>Abhiraj Adhikary</h1>
+    <div class="tagline">Aspiring Data Engineer | Builder & Co-Founder of Quizly</div>
+    <p class="intro">
+      Passionate about building scalable backend systems and crafting data-driven solutions.<br>
+      2x Hackathon Winner | Focused on modern data pipelines and cloud architecture.
+    </p>
+    <div class="action-buttons">
+      <a href="https://shorturl.at/smxF6" style="color: #000000;"><i class="fas fa-file-alt" style="color: #000000;"></i> Resume</a>
+      <a href="https://github.com/abhirajadhikary06" target="_blank" style="color: #000000;"><i class="fab fa-github" style="color: #000000;"></i> GitHub</a>
+      <a href="https://linkedin.com/in/abhirajadhikary06" target="_blank" style="color: #000000;"><i class="fab fa-linkedin" style="color: #000000;"></i> LinkedIn</a>
+    </div>
+  </section>
+
+  <div class="strip-container">
+    <div class="strip">
+      <span style="color: #000000;">Backend Development</span>
+      <span style="color: #000000;">App Development</span>
+      <span style="color: #000000;">Data Analytics</span>
+      <span style="color: #000000;">Data Engineering</span>
+      <span style="color: #000000;">PowerBI Analytics</span>
+      <span style="color: #000000;">Kafka Developer</span>
+      <span style="color: #000000;">Spark Developer</span>
+    </div>
+  </div>
+
+  <section class="about-me" id="about">
+    <h2><i class="fas fa-user"></i> About Me</h2>
+    <p>
+      I’m currently pursuing my college education, actively building real-world projects, and upskilling in backend development and data engineering. I've completed hands-on internships and simulations in Data Analytics, and I’m skilled in Django, Flask, and FastAPI development. I co-founded Quizly, a dynamic quiz platform, and aim to become a full-fledged Data Engineer while staying well-versed in DevOps, Cloud, and System Design.
+    </p>
+  </section>
+
+  <section class="tech-stack" id="skills">
+    <h2><i class="fas fa-tools"></i> Tech Stack & Skills</h2>
+    <div>
+      <h3><i class="fas fa-server"></i> Backend</h3>
+      <ul>
+        <li><i class="fab fa-python"></i> Django</li>
+        <li><i class="fas fa-flask"></i> Flask</li>
+        <li><i class="fas fa-bolt"></i> FastAPI</li>
+        <li><i class="fas fa-database"></i> SQLite</li>
+        <li><i class="fa-solid fa-republican"></i> PostgreSQL</li>
+      </ul>
+    </div>
+    <div>
+      <h3><i class="fas fa-table"></i> Data</h3>
+      <ul>
+        <li><i class="fa-solid fa-paw"></i> Pandas</li>
+        <li><i class="fas fa-square-root-alt"></i> NumPy</li>
+        <li><i class="fas fa-chart-bar"></i> Power BI</li>
+        <li><i class="fas fa-database"></i> SQL</li>
+        <li><i class="fas fa-fire"></i> PySpark</li>
+        <li><i class="fa-solid fa-gem"></i> Databricks</li>
+        <li><i class="fas fa-snowflake"></i> Snowflake</li>
+      </ul>
+    </div>
+    <div>
+      <h3><i class="fas fa-cogs"></i> DevOps</h3>
+      <ul>
+        <li><i class="fab fa-docker"></i> Docker</li>
+        <li><i class="fas fa-cog"></i> Kubernetes</li>
+        <li><i class="fab fa-linux"></i> Linux basics</li>
+        <li><i class="fab fa-microsoft"></i> Azure</li>
+      </ul>
+    </div>
+    <div>
+      <h3><i class="fas fa-wrench"></i> Tools</h3>
+      <ul>
+        <li><i class="fas fa-code-branch"></i> Git</li>
+        <li><i class="fab fa-github"></i> GitHub</li>
+        <li><i class="fas fa-code"></i> VSCode</li>
+        <li><i class="fas fa-envelope"></i> Postman</li>
+      </ul>
+    </div>
+    <div>
+      <h3><i class="fas fa-code"></i> Languages</h3>
+      <ul>
+        <li><i class="fab fa-python"></i> Python</li>
+        <li><i class="fab fa-js"></i> JavaScript</li>
+        <li><i class="fab fa-golang"></i> Golang</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="strip-container">
+    <div class="strip">
+      <span style="color: #000000;">Backend Development</span>
+      <span style="color: #000000;">App Development</span>
+      <span style="color: #000000;">Data Analytics</span>
+      <span style="color: #000000;">Data Engineering</span>
+      <span style="color: #000000;">PowerBI Analytics</span>
+      <span style="color: #000000;">Kafka Developer</span>
+      <span style="color: #000000;">Spark Developer</span>
+    </div>
+  </div>
+
+  <section class="projects" id="projects">
+    <h2><i class="fas fa-project-diagram"></i> My Projects</h2>
+    <div class="projects-container">
+    <div class="project-box">
+      <h3>
+        <i class="fas fa-gamepad"></i>
+        <a href="https://github.com/abhirajadhikary06/quizly" target="_blank" style="margin-left:8px; color:#00cc00; font-size:20px; text-decoration:none;" title="View on GitHub">
+          Quizly
+        </a>
+      </h3>
+      <p>AI powered Quiz platform with real-time scoring and user analytics.</p>
+    </div>
+    <div class="project-box">
+      <h3>
+        <i class="fas fa-file-invoice"></i>
+        <a href="https://github.com/abhirajadhikary06/WarrantyManager" target="_blank" style="margin-left:8px; color:#00cc00; font-size:20px; text-decoration:none;" title="View on GitHub">
+        Bill Vault
+        </a>
+      </h3>
+      <p>OCR-based Django tool with notification system.</p>
+    </div>
+    <div class="project-box">
+      <h3>
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/abhirajadhikary06/GitCollab" target="_blank" style="margin-left:8px; color:#00cc00; font-size:20px; text-decoration:none;" title="View on GitHub">
+        GitCollab
+        </a>
+      </h3>
+      <p>A real-time communication and feedback platform for sharing GitHub repositories to find collaborators.</p>
+    </div>
+    <div class="project-box">
+      <h3>
+        <i class="fas fa-sticky-note"></i>
+        <a href="https://github.com/abhirajadhikary06/devbiodotcom" target="_blank" style="margin-left:8px; color:#00cc00; font-size:20px; text-decoration:none;" title="View on GitHub">
+        devbiodotcom
+        </a>
+      </h3>
+      <p>A real-time communication and feedback platform for sharing GitHub repositories to find collaborators.</p>
+    </div>
+    <div class="project-box">
+      <h3>
+        <i class="fas fa-leaf"></i>
+        <a href="https://github.com/abhirajadhikary06/EcoMate" target="_blank" style="margin-left:8px; color:#00cc00; font-size:20px; text-decoration:none;" title="View on GitHub">
+        EcoMate
+        </a>
+      </h3>
+      <p>A real-time communication and feedback platform for sharing GitHub repositories to find collaborators.</p>
+    </div>
+    <div class="project-box">
+      <h3>
+        <i class="fa-solid fa-wave-square"></i>
+        <a href="https://github.com/abhirajadhikary06/netpulse" target="_blank" style="margin-left:8px; color:#00cc00; font-size:20px; text-decoration:none;" title="View on GitHub">
+        netpulse
+        </a>
+      </h3>
+      <p>A real-time communication and feedback platform for sharing GitHub repositories to find collaborators.</p>
+    </div>
+    </div>
+  </section>
+
+  <section class="certifications" id="certifications">
+    <h2><i class="fas fa-certificate"></i> Internships & Volunteering</h2>
+    <ul>
+    <li><i class="fas fa-certificate"></i> Quizly </li>
+    <li><i class="fas fa-certificate"></i> Hacktober'24 </li>
+      <li><i class="fas fa-certificate"></i> Power BI Job Simulation – Forage</li>
+      <li><i class="fas fa-certificate"></i> Accenture Job Simulation – Forage</li>
+    </ul>
+  </section>
+
+  <section class="connect-section" id="connect">
+    <h2><i class="fas fa-link"></i> Connect With Me</h2>
+    <div class="links">
+      <a href="https://linkedin.com/in/abhirajadhikary06" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/abhirajadhikary06" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://hackerrank.com/profile/abhirajadhikary1" target="_blank"><i class="fab fa-hackerrank"></i> HackerRank</a>
+      <a href="https://leetcode.com/u/abhirajadhikary06" target="_blank"><i class="fas fa-code"></i> LeetCode</a>
+      <a href="https://x.com/backbabhiraj" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
+      <a href="https://naukri.com/code360/profile/abhirajadhikary" target="_blank"><i class="fas fa-code"></i> Naukri/Code360</a>
+      <a href="https://dev.to/abhirajadhikary06" target="_blank"><i class="fab fa-dev"></i> Dev.to</a>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Adjust for sticky header
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
