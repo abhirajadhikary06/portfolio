@@ -7,6 +7,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='black'/%3E%3Cpath d='M16 6v20M6 16h20' stroke='%2300cc00' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("TupkYK7UM8opDTSTr");
+    })();
+  </script>
   <style>
     * {
       margin: 0;
@@ -303,6 +309,15 @@
       color: #00cc00;
     }
 
+    .certifications li a {
+      color: #a0a0a0;
+      text-decoration: none;
+    }
+
+    .certifications li a:hover {
+      color: #00cc00;
+    }
+
     .connect-section .links {
       display: flex;
       flex-wrap: wrap;
@@ -336,6 +351,63 @@
 
     .connect-section a:hover i {
       color: #000000;
+    }
+
+    .contact-section form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: 0 auto;
+      gap: 15px;
+    }
+
+    .contact-section input,
+    .contact-section textarea {
+      padding: 12px;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 8px;
+      color: #e0e0e0;
+      font-size: 15px;
+      font-family: 'Poppins', sans-serif;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact-section input:focus,
+    .contact-section textarea:focus {
+      border-color: #00cc00;
+      outline: none;
+    }
+
+    .contact-section textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-section button {
+      padding: 12px 30px;
+      background: #00cc00;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      align-self: center;
+    }
+
+    .contact-section button:hover {
+      background: #009900;
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(0, 204, 0, 0.5);
+    }
+
+    #form-status {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #a0a0a0;
+      text-align: center;
     }
 
     @media (max-width: 768px) {
@@ -386,6 +458,10 @@
       .project-box {
         padding: 20px;
       }
+
+      .contact-section form {
+        padding: 0 15px;
+      }
     }
   </style>
 </head>
@@ -397,6 +473,7 @@
       <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
       <a href="#certifications"><i class="fas fa-certificate"></i> Internships</a>
       <a href="#connect"><i class="fas fa-link"></i> Connect</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
   </header>
 
@@ -566,19 +643,15 @@
   <section class="certifications" id="certifications">
     <h2><i class="fas fa-certificate"></i> Internships & Volunteering</h2>
     <ul>
-      <li><i class="fas fa-certificate"></i> Quizly . Co-Founder</li>
+      <li><i class="fas fa-certificate"></i> Quizly - Co-Founder</li>
       <li><i class="fas fa-certificate"></i> Hacktober'24</li>
       <li>
         <i class="fas fa-certificate"></i>
-        <a href="https://shorturl.at/Nfmow" target="_blank" style="color: #a0a0a0; text-decoration: none;">
-          PwC PowerBI Job Simulation – Forage
-        </a>
+        <a href="https://shorturl.at/Nfmow" target="_blank" style="color: #a0a0a0; text-decoration: none;">PwC PowerBI Job Simulation – Forage</a>
       </li>
       <li>
         <i class="fas fa-certificate"></i>
-        <a href="https://shorturl.at/LwG2H" target="_blank" style="color: #a0a0a0; text-decoration: none;">
-          Accenture Job Simulation – Forage
-        </a>
+        <a href="https://shorturl.at/LwG2H" target="_blank" style="color: #a0a0a0; text-decoration: none;">Accenture Job Simulation – Forage</a>
       </li>
     </ul>
   </section>
@@ -596,6 +669,17 @@
     </div>
   </section>
 
+  <section class="contact-section" id="contact">
+    <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" name="user_name" placeholder="Your Name" required />
+      <input type="email" name="user_email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+      <div id="form-status"></div>
+    </form>
+  </section>
+
   <script>
     document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -604,11 +688,29 @@
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.offsetTop - 80, // Adjust for sticky header
+            top: targetElement.offsetTop - 80,
             behavior: 'smooth'
           });
         }
       });
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const status = document.getElementById('form-status');
+      status.textContent = 'Sending...';
+      status.style.color = '#a0a0a0';
+
+      emailjs.sendForm('service_w5ijbls', 'template_eaac86y', this)
+        .then(() => {
+          status.textContent = 'Message sent successfully!';
+          status.style.color = '#00cc00';
+          this.reset();
+        }, (error) => {
+          status.textContent = 'Failed to send message. Please try again.';
+          status.style.color = '#ff0000';
+          console.error('EmailJS error:', error);
+        });
     });
   </script>
 </body>
